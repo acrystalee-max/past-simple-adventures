@@ -79,6 +79,10 @@ export default function App() {
         {bar}
         <VerbBattle
           finish={done(1)}
+          advance={(coins, stars) => {
+            win(1, coins, stars);
+            setScreen("detective");
+          }}
           back={() => setScreen("map")}
           sound={sound}
         />
