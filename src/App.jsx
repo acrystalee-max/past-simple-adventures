@@ -145,11 +145,6 @@ export default function App() {
                 bring time back before everything that happened is forgotten.
               </p>
             </div>
-            <div className="storySteps">
-              <article><b>01</b><span><strong>Gate Realm</strong><small>Win the Gear of Motion with regular verbs.</small></span></article>
-              <article><b>02</b><span><strong>Spell Arena</strong><small>Free the Memory Crystal with irregular verbs.</small></span></article>
-              <article><b>03</b><span><strong>Clockwork City</strong><small>Recover the Story Dial and restart time.</small></span></article>
-            </div>
           </section>
           <div className="progress">
             <i
@@ -162,7 +157,7 @@ export default function App() {
           <section className="worlds">
             {worlds.map((w, i) => {
               const custom = i === 3,
-                unlocked = custom || i === 0 || progress.completed[i - 1],
+                unlocked = custom || progress.unlockedAll || i === 0 || progress.completed[i - 1],
                 title = custom
                   ? localStorage.getItem("custom-title") || w[0]
                   : w[0];
@@ -199,12 +194,20 @@ export default function App() {
               );
             })}
           </section>
-          <button
-            className="reset"
-            onClick={() => confirm("Reset all progress?") && reset()}
-          >
-            Reset Progress
-          </button>
+          <div className="mapActions">
+            <button
+              className="unlockAll"
+              onClick={() => setProgress((p) => ({ ...p, unlockedAll: !p.unlockedAll }))}
+            >
+              {progress.unlockedAll ? "Use Story Progression" : "Unlock All Levels"}
+            </button>
+            <button
+              className="reset"
+              onClick={() => confirm("Reset all progress?") && reset()}
+            >
+              Reset Progress
+            </button>
+          </div>
           {nameOpen && (
             <div className="modal">
               <form
