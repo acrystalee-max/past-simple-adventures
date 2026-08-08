@@ -1,5 +1,5 @@
 import {useEffect,useState} from 'react';
-const initial={name:'Time Scout',coins:0,stars:0,completed:[false,false,false],parts:[false,false,false],sound:true,music:true};
+const initial={name:'Time Scout',coins:0,stars:0,completed:[false,false,false],parts:[false,false,false],sound:true,music:true,unlockedAll:false};
 export function useProgress(){
  const [progress,setProgress]=useState(()=>{try{return {...initial,...JSON.parse(localStorage.getItem('psa-progress'))}}catch{return initial}});
  useEffect(()=>localStorage.setItem('psa-progress',JSON.stringify(progress)),[progress]);
