@@ -64,6 +64,10 @@ export default function App() {
         {bar}
         <VerbRunner
           finish={done(0)}
+          advance={(coins, stars) => {
+            win(0, coins, stars);
+            setScreen("battle");
+          }}
           back={() => setScreen("map")}
           sound={sound}
         />
