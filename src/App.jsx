@@ -133,6 +133,24 @@ export default function App() {
               </div>
             </div>
           </section>
+          <section className="storyBrief" aria-label="The Time Trail story">
+            <div className="storyLead">
+              <span className="eyebrow">YOUR MISSION</span>
+              <h2>The past is disappearing</h2>
+              <p>
+                Lord Forgetful shattered the Time Machine and hid its three
+                power parts across broken worlds. Without the machine, memories
+                fade, stories lose their endings, and the future can no longer
+                move forward. Master the Past Simple, restore each world, and
+                bring time back before everything that happened is forgotten.
+              </p>
+            </div>
+            <div className="storySteps">
+              <article><b>01</b><span><strong>Gate Realm</strong><small>Win the Gear of Motion with regular verbs.</small></span></article>
+              <article><b>02</b><span><strong>Spell Arena</strong><small>Free the Memory Crystal with irregular verbs.</small></span></article>
+              <article><b>03</b><span><strong>Clockwork City</strong><small>Recover the Story Dial and restart time.</small></span></article>
+            </div>
+          </section>
           <div className="progress">
             <i
               style={{
