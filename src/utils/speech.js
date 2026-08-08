@@ -1,0 +1,1 @@
+export function pronounce(text){if(!('speechSynthesis' in window)||!text)return;window.speechSynthesis.cancel();const voice=new SpeechSynthesisUtterance(text);voice.lang='en-US';voice.rate=.82;voice.pitch=1.05;voice.volume=.95;window.speechSynthesis.speak(voice)}

@@ -1,0 +1,1 @@
+export default function TopBar({progress,onMap}){return <header className="topbar"><button className="brand" onClick={onMap}>◷ <span>Past Simple Adventures</span></button><div className="stats"><span>★ {progress.stars}</span><span>● {progress.coins}</span><button onClick={onMap}>Map</button></div></header>}
